@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="contactElement"
+            type="com.example.contactsmadarsoft.models.ContactsModel" />
+
+        <variable
+            name="clickListener"
+            type="com.example.contactsmadarsoft.adapter.ContactListItemListener" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="2dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()-> clickListener.onContactItemClick(contactElement)}"
+            app:layoutBackGround="@{contactElement}">
+
+            <ImageView
+                android:id="@+id/userImg_rowElement"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/userName_rowElement"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/userAge_rowElement"
+                app:layout_constraintStart_toEndOf="@+id/userImg_rowElement"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Ahmed Ali" />
+
+            <TextView
+                android:id="@+id/yearsOld_rowElement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:text="Years Old"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Years Old" />
+
+            <TextView
+                android:id="@+id/userAge_rowElement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/yearsOld_rowElement"
+                app:layout_constraintEnd_toStartOf="@+id/yearsOld_rowElement"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="26" />
+
+            <TextView
+                android:id="@+id/userJobTitle_rowElement"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{contactElement.contactJobTitle}"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/userName_rowElement"
+                app:layout_constraintTop_toBottomOf="@+id/userName_rowElement"
+                tools:text="softWare Engineer" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

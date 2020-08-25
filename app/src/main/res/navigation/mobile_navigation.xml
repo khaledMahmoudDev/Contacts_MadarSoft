@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/contactsListFragment">
+
+    <fragment
+        android:id="@+id/contactsListFragment"
+        android:name="com.example.contactsmadarsoft.ui.contactList.ContactsListFragment"
+        android:label="contact List"
+        tools:layout="@layout/contacts_list_fragment">
+        <action
+            android:id="@+id/action_contactsListFragment_to_addAndUpdateContactFragment"
+            app:destination="@id/addAndUpdateContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAndUpdateContactFragment"
+        android:name="com.example.contactsmadarsoft.ui.addContact.AddAndUpdateContactFragment"
+        android:label="User"
+        tools:layout="@layout/add_and_update_contact_fragment">
+        <argument
+            android:name="selectedContact"
+            app:argType="com.example.contactsmadarsoft.models.ContactsModel" />
+        <action
+            android:id="@+id/action_addAndUpdateContactFragment_to_contactsListFragment"
+            app:destination="@id/contactsListFragment"
+            app:popUpTo="@id/contactsListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
