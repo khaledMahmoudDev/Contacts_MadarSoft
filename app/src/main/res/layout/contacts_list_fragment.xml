@@ -26,14 +26,40 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/contact_rwo_element" />
 
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/contactsNotFound"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/width_300"
+                android:layout_height="@dimen/width_300"
+                android:src="@drawable/nodata" />
+
+            <TextView
+                android:layout_margin="@dimen/margin_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/downloadFragment_nofile_meassage" />
+
+        </LinearLayout>
+
         <Button
 
-            android:text="Add Contact"
+            android:text="@string/add_contact"
             android:id="@+id/AddContact_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="@dimen/margin_32"
             android:background="@color/colorAccent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Contacts MadarSoft</string>
+    <string name="downloadFragment_nofile_meassage">Sorry \n You did not have any contacts yet</string>
+    <string name="name">name</string>
+    <string name="name_hint">ex: Ahmed Ali</string>
+    <string name="job_title">Job Title</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="add">add</string>
+    <string name="delete_contact">delete contact</string>
+    <string name="update">Update</string>
+    <string name="years_old">Years Old</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="pick_age">Pick Age</string>
+    <string name="cancel">cancel</string>
+    <string name="ok">ok</string>
+    <string name="job_title_hint">softWare Engineer</string>
+    <string name="choose_valid_name">please enter valid name</string>
+    <string name="choose_valid_job_title">please enter valid job title</string>
+    <string name="choose_age">please pick contact age</string>
+    <string name="choose_gender">please select gender</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="search">Search</string>
+
 </resources>

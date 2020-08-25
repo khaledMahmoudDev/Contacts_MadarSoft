@@ -16,14 +16,14 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="2dp">
+        android:layout_marginStart="@dimen/margin_4"
+        android:layout_marginTop="@dimen/margin_2"
+        android:layout_marginEnd="@dimen/margin_4"
+        android:layout_marginBottom="@dimen/margin_2"
+        app:cardCornerRadius="@dimen/margin_8"
+        app:cardElevation="@dimen/margin_8">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,11 +34,11 @@
 
             <ImageView
                 android:id="@+id/userImg_rowElement"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_width="@dimen/width_45"
+                android:layout_height="@dimen/width_45"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_8"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -48,25 +48,25 @@
                 android:id="@+id/userName_rowElement"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
                 android:textColor="#000000"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_20"
                 app:layout_constraintEnd_toStartOf="@+id/userAge_rowElement"
                 app:layout_constraintStart_toEndOf="@+id/userImg_rowElement"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Ahmed Ali" />
+                tools:text="@string/name_hint" />
 
             <TextView
                 android:id="@+id/yearsOld_rowElement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:text="@string/years_old"
                 android:textColor="#000000"
-                android:textSize="16sp"
-                android:text="Years Old"
+                android:textSize="@dimen/text_16"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Years Old" />
@@ -75,10 +75,10 @@
                 android:id="@+id/userAge_rowElement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="4dp"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_4"
                 android:textColor="#000000"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_16"
                 app:layout_constraintBottom_toBottomOf="@+id/yearsOld_rowElement"
                 app:layout_constraintEnd_toStartOf="@+id/yearsOld_rowElement"
                 app:layout_constraintTop_toTopOf="parent"
@@ -88,16 +88,16 @@
                 android:id="@+id/userJobTitle_rowElement"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="@dimen/margin_4"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_8"
                 android:text="@{contactElement.contactJobTitle}"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_16"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/userName_rowElement"
                 app:layout_constraintTop_toBottomOf="@+id/userName_rowElement"
-                tools:text="softWare Engineer" />
+                tools:text="@string/job_title_hint" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>

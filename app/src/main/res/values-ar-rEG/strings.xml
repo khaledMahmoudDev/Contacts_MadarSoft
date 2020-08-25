@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Contacts MadarSoft</string>
+    <string name="downloadFragment_nofile_meassage">عذرا ليس لديك اي جهات اتصال بعد</string>
+    <string name="name">اسم</string>
+    <string name="name_hint">مثال احمد</string>
+    <string name="job_title">المسمي الوظيفي</string>
+    <string name="male">ذكر</string>
+    <string name="female">انثس</string>
+    <string name="add">اضافة</string>
+    <string name="delete_contact">حذف</string>
+    <string name="update">تحديث</string>
+    <string name="years_old">سنة</string>
+    <string name="add_contact">اضافة شخص</string>
+    <string name="pick_age">اختر عام</string>
+    <string name="cancel">الغاء</string>
+    <string name="ok">تم</string>
+    <string name="job_title_hint">مهندس برمجيات</string>
+    <string name="choose_valid_name">رجاء ادخل اسم صحيح</string>
+    <string name="choose_valid_job_title">رجاء ادخل مسمي وظيفي صحيح</string>
+    <string name="choose_age">رجاء اختر عام</string>
+    <string name="choose_gender">رجاء اختر جنس</string>
+    <string name="unknown_error">خطأ غير معلوم</string>
+    <string name="search">بحث</string>
+</resources>

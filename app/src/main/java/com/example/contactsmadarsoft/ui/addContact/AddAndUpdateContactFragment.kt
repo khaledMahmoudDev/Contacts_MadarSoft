@@ -1,15 +1,14 @@
 package com.example.contactsmadarsoft.ui.addContact
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.contactsmadarsoft.R
 import com.example.contactsmadarsoft.databinding.AddAndUpdateContactFragmentBinding
 
 class AddAndUpdateContactFragment : Fragment() {
@@ -30,6 +29,7 @@ class AddAndUpdateContactFragment : Fragment() {
         val binding = AddAndUpdateContactFragmentBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+        setHasOptionsMenu(true)
 
         val safeArgs: AddAndUpdateContactFragmentArgs by navArgs()
         val receivedContact = safeArgs.selectedContact
@@ -44,28 +44,25 @@ class AddAndUpdateContactFragment : Fragment() {
             }
         })
 
-
-
-
         viewModel.addContactMessage.observe(viewLifecycleOwner, Observer {
             if (it != AddContactValidation.Good) {
                 var toastMessage = ""
 
                 when (it) {
                     AddContactValidation.ContactNameError -> {
-                        toastMessage = "please enter valid name"
+                        toastMessage = getString(R.string.choose_valid_name)
                     }
                     AddContactValidation.ContactJobTitleError -> {
-                        toastMessage = "please enter valid job title"
+                        toastMessage = getString(R.string.choose_valid_job_title)
                     }
                     AddContactValidation.ContactAgeError -> {
-                        toastMessage = "please pick contact age"
+                        toastMessage = getString(R.string.choose_age)
                     }
                     AddContactValidation.ContactGenderError -> {
-                        toastMessage = "please select gender"
+                        toastMessage = getString(R.string.choose_gender)
                     }
                     else -> {
-                        toastMessage = "Unknown Error"
+                        toastMessage = getString(R.string.unknown_error)
                     }
                 }
 
@@ -83,6 +80,17 @@ class AddAndUpdateContactFragment : Fragment() {
 
         return binding.root
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> requireActivity().onBackPressed()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 
